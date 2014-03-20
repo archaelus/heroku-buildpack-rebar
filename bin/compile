@@ -44,14 +44,9 @@ PATH=/app/otp/bin:$PATH
 
 cd $build
 
-if [ ! -e "rebar" ]; then
-  echo "-----> Installing Rebar from buildpack"
-  cp ${bpdir}/opt/rebar ./
-fi
-
-echo "-----> Building with Rebar"
+echo "-----> Building Rebar"
 unset GIT_DIR
-./rebar get-deps compile 2>&1 | sed -u 's/^/       /'
+./bootstrap 2>&1 | sed -u 's/^/       /'
 if [ ${PIPESTATUS[0]} -ne 0 ];
   "-----> Build failed"
   exit 1
