@@ -47,7 +47,7 @@ cd $build
 echo "-----> Building Rebar"
 unset GIT_DIR
 ./bootstrap 2>&1 | sed -u 's/^/       /'
-if [ ${PIPESTATUS[0]} -ne 0 ];
+if [ ${PIPESTATUS[0]} -ne 0 ]; then
   "-----> Build failed"
   exit 1
 else
