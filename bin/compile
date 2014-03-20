@@ -53,4 +53,7 @@ if [ ${PIPESTATUS[0]} -ne 0 ]; then
   exit 1
 fi
 
+# Clean up non rebar binary files
+rm -rf ./otp ./src ./Makefile ./rebar.config ./dialyzer_reference ./inttest ./ebin ./profile.d ./rebar.config.script ./.rebar ./RELEASE-NOTES.md ./priv ./CONTRIBUTING.md ./LICENSE ./NOTES.org ./README.md ./bootstrap.bat ./bootstrap ./include ./LICENSE ./rebar.config.sample ./.profile.d ./.gitignore ./test ./Procfile ./.travis.yml ./THANKS
+
 echo "-----> Build succeeded"
